@@ -62,29 +62,7 @@ export default defineComponent({
         alert("result " + JSON.stringify(result));
       });
     }
-
-    // Add registration error if there are.
-    PushNotifications.addListener("registrationError", (error) => {
-      console.log(`error on register ${JSON.stringify(error)}`);
-    }),
-
-    // Add Notification received
-    PushNotifications.addListener(
-      "pushNotificationReceived",
-      (notification) => {
-        console.log(`notification ${JSON.stringify(notification)}`);
-      }
-    ),
-
-    // Add Action performed
-    PushNotifications.addListener(
-      "pushNotificationActionPerformed",
-      async (notification) => {
-        alert("notification " + notification)
-        console.log("notification succeeded");
-      }
-    ),
-
+    
     // Initialize the registration with FMC Token
     PushNotifications.register();
 
